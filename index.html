@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Summariser</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div class="header">
+            <h1>Summariser</h1>
+            <!-- settings icon -->
+            <i class="fa fa-gear fa-lg" id="settings-button"></i>
+            <!-- settings overlay -->
+            <div class="options-box">
+                <!-- Type of summary -->
+                Type of summary:<br />
+                <input
+                    type="radio"
+                    id="paragraph"
+                    name="type"
+                    value="paragraph"
+                    checked="checked"
+                />
+                <label for="paragraph">Paragraph</label><br />
+                <input type="radio" id="points" name="type" value="points" />
+                <label for="points">Bullet points</label><br /><br />
+                <!-- Length of summary -->
+                Length of summary:<br />
+                <input type="radio" id="short" name="length" value="short" />
+                <label for="short">Short</label><br />
+                <input
+                    type="radio"
+                    id="medium"
+                    name="length"
+                    value="medium"
+                    checked="checked"
+                />
+                <label for="medium">Medium</label><br />
+                <input type="radio" id="long" name="length" value="long" />
+                <label for="long">Long</label><br />
+            </div>
+        </div>
+
+        <div class="main-container">
+            <!-- Summarise button -->
+            <div class="button-container">
+                <button id="summarise" class="summarise">
+                    Summarise this site
+                </button>
+                <button id="summarise-ai" class="summarise">
+                    Summarise using AI
+                </button>
+            </div>
+            <!-- summary text -->
+            <div class="container">
+                <div class="textarea-container">
+                    <textarea
+                        class="output"
+                        id="output"
+                        placeholder="Summary will appear here..."
+                        rows="8"
+                        cols="50"
+                        readonly
+                    ></textarea>
+                    <i
+                        class="fa fa-clone icon"
+                        id="copy"
+                        aria-hidden="true"
+                        title="copy"
+                    ></i>
+                </div>
+                <div id="snackbar"></div>
+            </div>
+        </div>
+    </body>
+</html>

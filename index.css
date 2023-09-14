@@ -1,0 +1,250 @@
+/* body design with linear gradient */
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: "Poppins", sans-serif;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-container {
+    background-color: #f4f6f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.main-container:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional styling for text and elements within .main-container */
+.main-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main-container p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* main container */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textarea-container {
+    position: relative;
+}
+
+.output {
+    padding-right: 25px; /* Add padding for the icon */
+    box-sizing: border-box;
+}
+
+.icon {
+    position: absolute;
+    top: 10%;
+    right: 5px; /* Adjust the right position as needed */
+    transform: translateY(-50%);
+    color: #aaa; /* Icon color */
+    ::hover {
+        cursor: pointer;
+    }
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-left: 2%;
+    margin-top: 0;
+    color: #fff;
+    font-size: 15px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* button container */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* settings icon */
+#settings-button {
+    position: absolute;
+    right: 3%;
+    top: 35%;
+    margin-right: 15px;
+}
+.fa:hover {
+    cursor: pointer;
+    color: #a29e9e;
+}
+
+/* settings container */
+
+.settings-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* settings overlay design */
+.options-box {
+    display: none;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    color: black;
+    font-family: "Times New Roman", monospace;
+}
+
+.options-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.options-box li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.options-box li:hover {
+    background-color: #f0f0f0;
+}
+
+/* button design */
+
+.summarise {
+    display: inline-block;
+    outline: 0;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+    min-width: 80px;
+    margin: 1%;
+    background-color: rgb(0, 120, 212);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 400;
+    box-sizing: border-box;
+    border: none;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.summarise:hover {
+    background-color: rgb(19, 96, 164);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styling for text and elements within .summarise button */
+.summarise span {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* snackbar */
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 150px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+
+    /* Adjustments for background color */
+    display: inline-block;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
